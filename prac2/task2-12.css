@@ -1,0 +1,167 @@
+.task212body{
+    background: #ffefd5;
+    background-image: url(dots.png);
+}
+.bigoutd{
+    width: 800px;
+    height: 740px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+}
+
+.fird{
+    width: 100%;
+    height: 50px;
+    border-radius: 0 0 12px 12px;
+    float: left;
+    background-color: #696969;
+    position: relative;
+}
+.fird h1{
+    width: 250px;
+    height: 100%;
+    float: left;
+    color: #ff8c00;
+    margin: 0;
+}
+.fird a{
+    position: absolute;
+    bottom: 15px;
+    color: #cfcfcf;
+    font-style: italic;
+    font-size: small;
+}
+.bigoutd .nav{
+    list-style: none;
+    display: flex;
+}
+.bigoutd li{
+    margin-right: 35px;
+    margin-top: 20px;
+}
+.bigoutd li:hover{
+    color: #ff8c00;
+}
+
+
+.secd{
+    width: 550px;
+    height: 650px;
+    padding: 20px;
+    float: left;
+    margin: 0;
+    box-sizing: border-box;
+}
+.secd ul li{
+    margin: 0;
+}
+.secd table{
+    width: 90%;
+    text-align: left;
+}
+.secd td,table{
+    border: grey 1px solid;
+    border-collapse: collapse;
+    border-left: none;
+    border-right: none;
+}
+.secd td,th{
+    height: 30px;
+}
+.secd table th{
+    background-color: #696969;
+}
+.secd table td{
+    background-color: white;
+}
+
+.doggodiv{
+    margin-top: 30px;
+}
+.doggodiv h4{
+    color: #ff8c00;
+}
+.dogimg{
+    float: right;
+}
+
+
+.rightdiv{
+    height: 340px;
+    width: 250px;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    border-left: #e3e3e3 1px solid;
+}
+.rightdiv h4{
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ff8c00;
+    color: white;
+    box-sizing: border-box;
+}
+.rightdiv a{
+    color: #ff8c00;
+}
+.rightdiv blockquote{
+    margin: 0;
+    color: #868686;
+}
+.rightdiv pre{
+    color: #868686;
+}
+.rightdiv span{
+    font-style: italic;
+}
+
+
+.footdiv{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 12px 12px 0 0;
+    background-color: #696969;
+}
+.foottitle{
+    color: #d3d3d3;
+    margin: 0;
+}
+.foottitle h4{
+    margin: 0;
+    width: 100px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 50px;
+    float: left;
+    line-height: 100%;
+}
+#Copy{
+    margin-left: 250px;
+    font-size: small;
+    padding-top: 16px;
+    height: 50px;
+    width: 200px;
+    float: left;
+}
+.icon3{
+    padding: 16px;
+    float: right;
+}
+.icon2{
+    padding: 16px;
+    float: right;
+}
+.icon1{
+    padding: 16px;
+    float: right;
+}

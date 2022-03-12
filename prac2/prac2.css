@@ -1,0 +1,265 @@
+.task22h1{
+    font-family: sans-serif;
+}
+.task22p{
+    font-family: serif;
+}
+.task22p a{
+    color: darkgreen;
+}
+.del{
+    color: grey;
+}
+.mark{
+    color: darkblue;
+    background-color: pink;
+}
+.task22h2{
+    text-align: left;
+    font-family: sans-serif;
+}
+.task22pre{
+    font-family: monospace;
+}
+
+
+
+.task23h3{
+    color: rgba(0, 0, 139, 0.8);
+}
+.task23p1{
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+}
+.transparent-text{
+    color: rgba(0, 0, 0, 0.5);
+}
+.task23pre2{
+    font-style: normal;
+}
+
+
+.task24b{
+    background-color: #dcf5f5;
+    background-image: url("cross.png");
+
+}
+
+
+#content{
+    background-color: white;
+}
+.fancy{
+    font-family: cursive;
+}
+.blue{
+    color: blue;
+}
+
+
+.task26d1{
+    /* background-color: white; */
+    border: darkgrey 1px solid;
+    border-radius: 8px;
+}
+.task26d1 hr{
+    border-color: #cfdfe4;
+}
+.red-border {
+    border: 1px red solid;
+}
+.red-outline {
+    /* border: 1px red solid; */
+    outline: red 1px solid;
+}
+.task26d2{
+    border: 1px red solid;
+    /* border-style: double; */
+}
+.task26d3{
+    border: 1px blue solid;
+    /* border-style: double; */
+}
+.task26d4{
+    border: 1px red solid;
+    border-style:solid;
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+}
+.task26d5{
+    border: 1px blue solid;
+    border-style:solid;
+    border-radius: 0 0 8px 8px;
+}
+
+
+
+.task27outd1{
+    margin: 0;
+    padding: 0;
+    border: rgb(14, 44, 126) 1px solid;
+}
+.task27ind1{
+    width: 700px;
+    height: 200px;
+    border: 1px red solid;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 10px 20px;
+}
+.task27outd2{
+    margin-top: 20px;
+    padding: 0;
+    border: rgb(14, 44, 126) 1px solid;
+}
+.task27ind2{
+    padding: 12px;
+    height: 400px;
+    width: 400px;
+    border: red 1px solid;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+/* @font-face {
+    font-family: "Raleway";
+    src: url("Raleway-Regular.ttf");
+}
+@font-face {
+    font-family: "NotoSerif";
+    src: url("NotoSerif-Regular.ttf");
+} */
+.task28h1{
+    font-family: "Raleway", sans-serif;
+}
+.task28h2{
+    font-family: "Raleway",sans-serif;
+}
+.task28p{
+    font-family: "Noto+Serif",serif;
+}
+.notoserif{
+    font-family: "Noto+Serif",serif;
+}
+/* .serif{
+    font-family: serif;
+} */
+.Raleway{
+    font-family: "Raleway",serif;
+}
+.task28q{
+    color: dimgrey;
+    line-height: 1.5;
+    word-spacing: 0.2em;
+    text-align: justify;
+}
+.task28h4{
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: normal;
+}
+.mic{
+    color: #bfcfd4;
+    
+}
+.mic i{
+    font-size: 25px;
+}
+
+
+.task29ul1{
+    list-style: none;
+    height: 50px;
+    background-color: darkgrey;
+
+}
+.task29ul1 a:hover{
+    color: lightgrey;
+    background-color: white;
+}
+.task29ul1 a{
+    float: left;
+    line-height: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: white;    
+}
+.task29ol1 li ul{
+    list-style-type: square;
+}
+.task29ol1 li ol{
+    list-style-type: lower-roman;
+}
+
+
+.task210tb{
+    width: 500px;
+}
+.task210tb,td{
+    border: darkgrey 1px solid;
+    border-collapse: collapse;
+
+}
+.task210tb tr:nth-child(even){
+    color: black;
+    background-color: #f8f8f8;
+}
+.task210tb tr:nth-child(odd){
+    color: black;
+    background-color: white;
+}
+.task210tb th{
+    background-color: darkslategrey;
+    color: #f8f8f8;
+}
+.task210tb2,th,td{
+    border: 1px solid black;
+}
+.task210tb2{
+    border-collapse: collapse;
+}
+.task210tb2 th{
+    background-color: palegoldenrod;
+}
+
+
+
+.bigd{
+    margin: 0 auto;
+    border: 1px red solid;
+    /* display: flex; */
+    width: 620px;
+    /* height: auto; */
+    box-sizing: border-box;
+}
+.task211d1{
+    margin: auto;
+}
+.task211d2{
+    float: left;
+    width: 200px;
+    height: 400px;
+    overflow:auto;
+    margin-top: 10px;
+    background-color: white;
+}
+.task211d3{
+    /* float: right; */
+    flex: auto;
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    margin: 10px auto auto;
+    position: relative;
+    overflow: hidden;
+}
+.redbox{
+    width: 1000px;
+    height: 100px;
+    border: 1px red solid;
+    position: absolute;
+    float: left;
+    left: 100px;
+    top: 100px;
+}
