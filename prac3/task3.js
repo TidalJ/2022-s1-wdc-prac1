@@ -61,7 +61,7 @@ function blog_post(){
     var qua = document.querySelector(".qua").value;
     qua = -(-qua);
 
-    for(let i = 0;i< qua; i++)
+    for(let i = 0;i< qua && i <= 10; i++)
     {
         if(countnum>9)
             break;
@@ -73,7 +73,7 @@ function blog_post(){
     // var posttime = document.querySelector(".posts");
     const onepost = document.createElement("div");
     onepost.setAttribute("id","apost"+countnum);
-    onepost.setAttribute("class","ipost");
+    onepost.setAttribute("class","ipost blog-post");
     document.querySelector("#posts").append(onepost);
     document.querySelector("#apost"+countnum).append(divtime);
     
@@ -142,7 +142,7 @@ function drag(){
     console.log(countnum);
     console.log(qua);    
     var bigdiv = document.querySelector("#posts");
-    var smalldiv = bigdiv.querySelectorAll(".ipost");
+    var smalldiv = bigdiv.querySelectorAll(".blog-post");
     for (let s = 0; s < countnum; s++) {
         if( s >= qua)
         {
