@@ -63,7 +63,7 @@ function blog_post(){
 
     for(let i = 0;i< qua; i++)
     {
-        if(countnum>=10)
+        if(countnum>9)
             break;
     const divtime = document.createElement("div");
     divtime.append(new Date());
@@ -139,6 +139,8 @@ function bgcolor(){
 function drag(){
     var qua = document.querySelector("#showhowmanydiv").value;
     qua = -(-qua);   
+    console.log(countnum);
+    console.log(qua);    
     var bigdiv = document.querySelector("#posts");
     var smalldiv = bigdiv.querySelectorAll(".ipost");
     for (let s = 0; s < countnum; s++) {
