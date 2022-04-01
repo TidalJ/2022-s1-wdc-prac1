@@ -1,0 +1,11 @@
+curl --request GET \
+  --url https://google.com/ \
+  --cookie '1P_JAR=2022-03-28-08; AEC=AVQQ_LAgD26BUcVp18qdHDQCJl7A8kOPQGqyAwgA6w-v-OrOiUXtQU7mQA; NID=511%3DoHbk5uhRgAo--9eFdf52-Pi0qFrhFj15tdkPGWr9LArB_iXP_QqsxSNhS6WYFCy6Lo-Ltj69tun9oXaXXfJ-CHDEzyOgP_bIeXLzNR9qX6HFoDEjANWIJ8RsWIBKgAV0NdBWXq4bI1ItAFmMJYgC6BfRTYLTlMSp2Y_3K7tKL2I'
+
+
+
+  curl --request HEAD \
+  --url https://google.com/ \
+  --cookie '1P_JAR=2022-03-28-08; NID=511%3DoHbk5uhRgAo--9eFdf52-Pi0qFrhFj15tdkPGWr9LArB_iXP_QqsxSNhS6WYFCy6Lo-Ltj69tun9oXaXXfJ-CHDEzyOgP_bIeXLzNR9qX6HFoDEjANWIJ8RsWIBKgAV0NdBWXq4bI1ItAFmMJYgC6BfRTYLTlMSp2Y_3K7tKL2I'
+
+  

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>
+        main2
+        <input id="btn" type="button" value="button" style="display: none;">
+    </h1> -->
+    <h1 id="h"></h1>
+    <!-- <p id="p"></p> -->
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            if(xhr.status == 403)
+            {
+                // var btn = document.getElementById("btn");
+                // btn.style.display = "block";
+                // btn.onclick = function(){
+                //     var xml = new XMLHttpRequest();
+                //     xml.onreadystatechange = function(){
+                //         if(xml.status == 200)
+                //             accept();
+                //     }
+                // xml.open('get','/accept');
+                // xml.send();                            
+                // }
+                document.getElementById("h").innerHTML = `Click btn to accept condition<button onclick="accept()">Button</button> `;
+            }
+            if(xhr.status == 200)
+            {
+                document.getElementById("h").innerHTML = xhr.responseText;
+                
+            }
+        };        
+        xhr.open('get','/content.ajax');
+        xhr.send();
+
+        function accept(){
+            let xml = new XMLHttpRequest();
+        xml.onreadystatechange = function() {
+            if (xml.status == 200) {
+                accept();
+            }
+        };
+        xml.open("GET", "/accept", true);
+        xml.send();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+</head>
+<body>
+<ul id="list"></ul>
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+            let length = JSON.parse(xhr.responseText);
+            let list = ``;
+            for (let i = 0; i < length.length; i++) {
+                list += `<li>${length[i]}</li>`;
+            document.getElementById("list").innerHTML = list;
+        }
+    };
+    xhr.open("GET", "/log.json", true);
+    xhr.send();
+
+
+    setInterval(() => {
+        let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+            let length = JSON.parse(xhr.responseText);
+            let list = ``;
+            for (let i = 0; i < length.length; i++) {
+                list += `<li>${length[i]}</li>`;
+            document.getElementById("list").innerHTML = list;
+        }
+    };
+    xhr.open("GET", "/log-ro.json", true);
+    xhr.send();
+    }, 1000);
+</script>
+</body>
+</html>
