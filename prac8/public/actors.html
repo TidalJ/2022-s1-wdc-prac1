@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Actors</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous">
+    <style>
+
+      main, header, footer {
+        padding: 1em;
+        box-sizing: border-box;
+      }
+
+      header, footer {
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header><h1>Actors!</h1></header>
+
+    <main class="pure-g">
+
+      <div class="pure-u-2-3">
+
+        <table class="pure-table pure-table-horizontal">
+          <thead>
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+              </tr>
+          </thead>
+          <tbody id="name">
+              <!-- <tr>
+                  <td>Some</td>
+                  <td>Actor</td>
+              </tr> -->
+          </tbody>
+        </table>
+
+      </div>
+
+      <aside class="pure-u-1-3">
+        <form class="pure-form pure-form-stacked">
+          <fieldset>
+              <legend>Add Actor</legend>
+              <label for="actor-first-name">First Name</label>
+              <input type="text" id="actor-first-name" placeholder="First/Given Name" />
+              <label for="actor-last-name">Last Name</label>
+              <input type="text" id="actor-last-name" placeholder="First/Family Name" />
+              <button type="button" class="pure-button pure-button-primary" onclick="add()">Add</button>
+          </fieldset>
+        </form>
+      </aside>
+
+    </main>
+
+    <script>
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        let allActors = JSON.parse(this.responseText);
+        let names = ``;
+        for (let i = 0; i < Object.keys(allActors).length; i++) {
+                names += `<tr><td>${allActors[i].last_name}</td><td>${allActors[i].first_name}</td></tr>`;
+            }
+            document.getElementById("name").innerHTML = names;
+      }
+        xhr.open("GET","/get");
+        xhr.send();
+    </script>
+
+    <script>
+      function add(){
+      let first_name = document.getElementById("actor-first-name").value;
+      let last_name = document.getElementById("actor-last-name").value;
+      let xhr = new XMLHttpRequest();
+      // xhr.onload = function(){};
+      xhr.open("POST","/add");
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.send(JSON.stringify({ last_name: last_name, first_name: first_name }));
+      }
+
+    </script>
+
+    <footer>&copy; 2021 WDC</footer>
+  </body>
+</html>
