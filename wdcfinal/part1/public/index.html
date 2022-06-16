@@ -47,10 +47,12 @@
             <option value="A">A</option>
             <option value="B">B</option>
         </select>
-        <input type="submit" value="submit" id="btn" @click="showfilter">
+        <input type="submit" value="submit" id="btn">
+        <input type="submit" value="show" id="btn" @click="showfilter">
+
         <div>
             <li v-for="(p,q) in filter">
-                {{filter}}
+                {{filter[q]}}
             </li>
         </div>
 
@@ -71,6 +73,7 @@
             iforder: false,
             ifava: false,
             filter:[],
+            fil:[],
 
         },
         methods: {
@@ -124,8 +127,13 @@
                 this.ava = ava;
             },
             showfilter:function(){
-                
-            }
+
+                this.filter = filter;
+                this.fil = fil;
+                // console.log(filter);
+                // console.log(fil);
+                // console.log(this.filter);                
+            },
         },
     })
 </script>
@@ -149,10 +157,14 @@
             // console.log(xhr.responseText);
             // console.log(typeof(xhr.responseText));
             filter = JSON.parse(xhr.responseText);
+
+            this.filter = filter;
+            fil = filter;
             // console.log(filter);
-            // console.log(this.filter);
-            
-        }
+            // console.log(fil);
+            // console.log(this.filter);            
+        };
+        // xhr.send();
     })
 
 
