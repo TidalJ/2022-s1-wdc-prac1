@@ -42,7 +42,7 @@ app.use(express.static(__dirname + "/public", { index: "index.html" }));
 // });
 
 app.get('/order',function(req,res){
-  connection.query('SELECT * FROM orders', function (error, results, fields) {
+  connection.query('SELECT * FROM orders WHERE ordertime <= "2022-06-20"', function (error, results, fields) {
     // connection.release();
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
@@ -60,7 +60,7 @@ app.get('/ava',function(req,res){
   connection.query('SELECT * FROM availableseats', function (error, results, fields) {
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
-    console.log('The solution is: ', deal);
+    // console.log('The solution is: ', deal);
     res.json(deal);
   });
 })
