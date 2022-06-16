@@ -19,10 +19,9 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,6 +29,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + "/public", { index: "index.html" }));
+
+// connection.query('SELECT * FROM orders', function (error, results, fields) {
+//   // connection.release();
+//   if (error) throw error;
+//   var deal = JSON.parse(JSON.stringify(results));
+//   console.log('The solution is: ', deal);
+//   // console.log(typeof(results));
+
+//   console.log(deal);
+//   // res.json(deal);
+// });
 
 app.get('/order',function(req,res){
   connection.query('SELECT * FROM orders', function (error, results, fields) {
@@ -55,14 +65,14 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
 module.exports = app;

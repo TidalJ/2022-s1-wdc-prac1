@@ -9,9 +9,12 @@
 </head>
 <body>
     <div id="app">
-        {{message}}
-
-        <button type="submit" @click="ShowOrder">Show Order</button>
+        <button @click="search">search</button>
+        <button @click="show">show orders</button>
+        <input type="text" v-model="message">
+        <div>{{message}}
+            <li v-for="(i,index) in temp"> {{temp}} </li>
+        </div>
     </div>
 </body>
 <script>
@@ -19,17 +22,30 @@
         el: '#app',
         data: {
             message: 'Hello Vue!',
-
+            orders:[],
+            temp:{}
         },
         methods: {
-            showOrder:function() {
+            search:function(){
                 var xhr = new XMLHttpRequest();
                 xhr.onload = function () {
-                    console.log(xhr.readyState);
+                    // console.log(xhr.readyState);
+                    var ord = JSON.parse(this.responseText);
+                    console.log(ord);
+                    var len = ord.length;
+                    // console.log(len);
+                    this.orders = ord;
+                    this.temp = ord[0];
+                    console.log(this.temp);
+                    // console.log(this.orders);
                 }
                 xhr.open('get', '/order');
                 xhr.send();
             },
+            show:function(){
+                // alert(this.orders)
+                this.message = this.temp;
+            }
         },
     })
 </script>
