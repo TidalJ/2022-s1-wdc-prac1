@@ -224,7 +224,7 @@ function renderPost(postData){
     post.innerHTML = postStructure;
 
     post.querySelector('h2.post-title'  ).innerText = postData.title;
-    post.querySelector('div.post-body p').innerHTML = postData.content;
+    post.querySelector('div.post-body p').innerText = postData.content;
 
     return(post);
 
