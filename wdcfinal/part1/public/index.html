@@ -54,7 +54,7 @@
                 <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
                 The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
                 The Available seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
-                <input type="button" value="orderseats" id="ordbtn">
+                <input type="submit" value="orderseats" id="ordbtn">
             </li>
         </div>
 
@@ -171,10 +171,18 @@
 
 
 </script>
-<script>
+<!-- <script>
+    window.onload = function(){
+        var ordsection = document.getElementById('ordsection');
+        var ordseat = document.getElementById('ordseat');
         var ordbtn = document.getElementById('ordbtn');
-        var ordsection = document.getElementById('ordbtn');
+        ordbtn.addEventListener("click",function(){
 
-</script>
+        })
+    }
+
+
+
+</script> -->
 
 </html>
