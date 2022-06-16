@@ -131,7 +131,7 @@
         // console.log(sectionselect.value);
         var datavalue = dataselect.value;
         var sectionvalue = sectionselect.value;
-        var params = 'dataselect'+ datavalue +'&sectionselect' + sectionvalue;
+        var params = 'dataselect='+ datavalue +'&sectionselect=' + sectionvalue;
         // console.log(params);
         var xhr = new XMLHttpRequest();
         xhr.open('get', '/order?'+params);

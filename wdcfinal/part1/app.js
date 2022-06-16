@@ -41,7 +41,7 @@ app.use(express.static(__dirname + "/public", { index: "index.html" }));
 //   // res.json(deal);
 // });
 
-app.get('/searchorder',function(req,res){
+app.get('/searchorder', function (req, res) {
   connection.query('SELECT * FROM orders WHERE ordertime <= "2022-06-20"', function (error, results, fields) {
     // connection.release();
     if (error) throw error;
@@ -56,7 +56,7 @@ app.get('/searchorder',function(req,res){
   // res.end();
 })
 
-app.get('/ava',function(req,res){
+app.get('/ava', function (req, res) {
   connection.query('SELECT * FROM availableseats', function (error, results, fields) {
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
@@ -65,11 +65,23 @@ app.get('/ava',function(req,res){
   });
 })
 
+app.get('/order', function (req, res) {
+  // res.send(req.query);
+  // console.log(req.query);
+  let data = req.query.dataselect;
+  let section = req.query.sectionselect;
+  // console.log(data);
+  // console.log(section);
+
+  
+  res.send();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
