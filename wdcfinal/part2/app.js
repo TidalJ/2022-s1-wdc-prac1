@@ -12,9 +12,9 @@ var app = express();
 
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    // port: 3306,
-    // user: 'MySQL Username',
-    // password : 'MySQL Password',
+    port: 3306,
+    user: 'root',
+    password : 'jc',
     multipleStatements: true
 });
 

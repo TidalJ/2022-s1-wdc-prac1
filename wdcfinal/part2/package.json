@@ -13,6 +13,7 @@
     "express-session": "^1.17.3",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
     "sanitize-html": "^2.7.0"
   }
 }
