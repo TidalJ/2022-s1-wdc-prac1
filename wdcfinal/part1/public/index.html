@@ -9,12 +9,15 @@
 </head>
 <body>
     <div id="app">
-        <button @click="search">search</button>
+        <button @click="search">search orders</button>
         <button @click="show">show orders</button>
-        <input type="text" v-model="message">
-        <div>{{message}}
+        <!-- <input type="text"> -->
+        <!-- 1.5 -->
+        <div>
+            {{message}}
             <li v-for="(i,index) in temp">
-                {{temp[index].orderid}} {{temp[index].section}} {{temp[index].seat}} {{temp[index].ordertime}} {{temp[index].userid}} {{temp[index].username}}
+                {{temp[index].orderid}} {{temp[index].section}} {{temp[index].seat}} {{temp[index].ordertime}}
+                <!-- {{temp[index].userid}} {{temp[index].username}} -->
             </li>
         </div>
     </div>
@@ -52,6 +55,7 @@
                 xhr.send();
             },
             show:function(){
+                this.message = 'Ordered details on the 20th June 2022'
                 console.log(temp);
                 this.temp = temp;
             }
