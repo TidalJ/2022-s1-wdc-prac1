@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        <button @click="search">search orders{{iforder}}</button>
+        <button @click="search">search orders</button>
         <button @click="show">show orders</button>
         <!-- <input type="text"> -->
         <!-- 1.5 -->
@@ -96,15 +96,9 @@
 
             },
             show:function(){
-                this.iforder = iforder;
-                if(this.iforder == true){
-                    this.message = 'Ordered details on the 20th June 2022'
-                    // console.log(temp);
-                    this.temp = temp;                    
-                }else{
-                    alert("click search orders");
-                }
-
+                this.message = 'Ordered details on the 20th June 2022'
+                // console.log(temp);
+                this.temp = temp;
             },
 
             Available:function(){
