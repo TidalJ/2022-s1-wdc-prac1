@@ -46,12 +46,15 @@
             <option value="A">A</option>
             <option value="B">B</option>
         </select>
-        <input type="submit" value="submit select" id="btn">
+        <input type="submit" value="Filter date or section" id="btn">
         <input type="submit" value="show" id="btn" @click="showfilter">
 
         <div>
             <li v-for="(p,q) in filter">
-                The Available seat id is <span>{{filter[q].seatsid}}</span>
+                <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
+                The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
+                The Available seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
+                <input type="button" value="orderseats" id="ordbtn">
             </li>
         </div>
 
@@ -166,6 +169,11 @@
         // xhr.send();
     })
 
+
+</script>
+<script>
+        var ordbtn = document.getElementById('ordbtn');
+        var ordsection = document.getElementById('ordbtn');
 
 </script>
 

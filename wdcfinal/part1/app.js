@@ -83,7 +83,7 @@ app.get('/filter', function (req, res) {
   }else{
     searchsql = 'SELECT * FROM seats WHERE (ordertime <= "'+datase+'" OR ordertime IS NULL) AND section = "'+sectionse+'"';
   }
-  console.log(searchsql);
+  // console.log(searchsql);
     connection.query(searchsql, function (error, results, fields) {
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
