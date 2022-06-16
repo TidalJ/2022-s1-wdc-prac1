@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        <button @click="search">search orders</button>
+        <button @click="search">search orders{{iforder}}</button>
         <button @click="show">show orders</button>
         <!-- <input type="text"> -->
         <!-- 1.5 -->
@@ -63,6 +63,10 @@
             temp:[],
             ava:[],
             avatemp:[],
+            data:'',
+            section:'',
+            iforder:false,
+            ifava:false,
 
         },
         methods: {
@@ -76,6 +80,8 @@
                     // console.log(len);
                     this.orders = ord;
                     temp = ord;
+                    iforder = true;
+                    this.iforder = true;
                     // console.log(this.orders);
                     // console.log(orders);
                     // console.log(temp);
@@ -87,11 +93,18 @@
                 }
                 xhr.open('get', '/order');
                 xhr.send();
+
             },
             show:function(){
-                this.message = 'Ordered details on the 20th June 2022'
-                // console.log(temp);
-                this.temp = temp;
+                this.iforder = iforder;
+                if(this.iforder == true){
+                    this.message = 'Ordered details on the 20th June 2022'
+                    // console.log(temp);
+                    this.temp = temp;                    
+                }else{
+                    alert("click search orders");
+                }
+
             },
 
             Available:function(){
