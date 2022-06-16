@@ -89,7 +89,7 @@
                     // message = this.temp;
                     // console.log(this.message);
                 }
-                xhr.open('get', '/order');
+                xhr.open('get', '/searchorder');
                 xhr.send();
 
             },
@@ -127,8 +127,18 @@
     var sectionselect = document.getElementById('sectionselect');
     var btn = document.getElementById('btn');
     btn.addEventListener("click",function(){
-        console.log(dataselect.value);
-        console.log(sectionselect.value);
+        // console.log(dataselect.value);
+        // console.log(sectionselect.value);
+        var datavalue = dataselect.value;
+        var sectionvalue = sectionselect.value;
+        var params = 'dataselect'+ datavalue +'&sectionselect' + sectionvalue;
+        // console.log(params);
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', '/order?'+params);
+        xhr.send();
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+        }
     })
 
 
