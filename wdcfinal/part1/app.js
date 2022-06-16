@@ -65,15 +65,26 @@ app.get('/ava', function (req, res) {
   });
 })
 
-app.get('/order', function (req, res) {
+app.get('/filter', function (req, res) {
   // res.send(req.query);
   // console.log(req.query);
-  let data = req.query.dataselect;
-  let section = req.query.sectionselect;
-  console.log(data);
-  console.log(section);
-  let searchsql = 
-    connection.query('SELECT * FROM seats WHERE ordertime IS NULL', function (error, results, fields) {
+  let datase = req.query.dataselect;
+  let sectionse = req.query.sectionselect;
+  let searchsql = '';
+  console.log(datase);
+  console.log(sectionse);
+
+  if(datase == '' && sectionse == ''){
+    searchsql = 'SELECT * FROM seats WHERE ordertime IS NULL';
+  }else if(datase == '' && sectionse != ''){
+    searchsql = 'SELECT * FROM seats WHERE ordertime IS NULL AND section = "'+datase+'"';
+  }else if(datase != '' && sectionse == ''){
+    searchsql = 'SELECT * FROM seats WHERE ordertime <= "'+datase+'" OR ordertime IS NULL';
+  }else{
+    searchsql = 'SELECT * FROM seats WHERE (ordertime <= "'+datase+'" OR ordertime IS NULL) AND section = "'+datase+'"';
+  }
+  console.log(searchsql);
+    connection.query(searchsql, function (error, results, fields) {
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
     // console.log('The solution is: ', deal);
