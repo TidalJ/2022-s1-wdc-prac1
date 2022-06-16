@@ -10,6 +10,8 @@
 <body>
     <div id="app">
         {{message}}
+
+        <button type="submit" @click="ShowOrder">Show Order</button>
     </div>
 </body>
 <script>
@@ -20,7 +22,7 @@
 
         },
         methods: {
-            showorder:function() {
+            showOrder:function() {
                 var xhr = new XMLHttpRequest();
                 xhr.onload = function () {
                     console.log(xhr.readyState);
