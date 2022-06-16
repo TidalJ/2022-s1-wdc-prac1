@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>reservation system</title>
 </head>
+
 <body>
     <div id="app">
         <button @click="search">search orders</button>
@@ -17,8 +19,8 @@
             {{message}}
             <li v-for="(i,index) in temp">
                 <!-- {{temp[index].orderid}}  -->
-                the order section is <span>{{temp[index].section}} </span> 
-                seat is <span>{{temp[index].seat}} </span> 
+                the order section is <span>{{temp[index].section}} </span>
+                seat is <span>{{temp[index].seat}} </span>
                 <!-- <br> -->
                 <!-- ordertime is <span>{{temp[index].ordertime}}</span>  -->
                 <!-- {{temp[index].userid}}  -->
@@ -26,21 +28,7 @@
                 <!-- order username is <span>{{temp[index].username}}</span>  -->
             </li>
         </div>
-        <select value="data">
-            <option value="null"> </option>
-            <option value="2022-06-17">2022-06-17</option>
-            <option value="2022-06-18">2022-06-18</option>
-            <option value="2022-06-19">2022-06-19</option>
-            <option value="2022-06-20">2022-06-20</option>
-            <option value="2022-06-21">2022-06-21</option>
-            <option value="2022-06-22">2022-06-22</option>
-            <option value="2022-06-23">2022-06-23</option>
-        </select>
-        <select value="section">
-            <option value="null"> </option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-        </select>
+
         <button @click="Available">search Available seats</button>
         <button @click="avashow">show Available seats</button>
         <div>
@@ -52,6 +40,16 @@
                 The Available seat num is {{ava[k].seat}} -->
             </li>
         </div>
+
+        <input type="date" name="" id="dataselect">
+        <select value="section" id="sectionselect">
+            <option value=" ">section</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+        <input type="submit" value="submit" id="btn">
+
+
     </div>
 </body>
 <script>
@@ -59,18 +57,18 @@
         el: '#app',
         data: {
             message: 'Welcome come!!!',
-            orders:[],
-            temp:[],
-            ava:[],
-            avatemp:[],
-            data:'',
-            section:'',
-            iforder:false,
-            ifava:false,
+            orders: [],
+            temp: [],
+            ava: [],
+            avatemp: [],
+            data: '',
+            section: '',
+            iforder: false,
+            ifava: false,
 
         },
         methods: {
-            search:function(){
+            search: function () {
                 var xhr = new XMLHttpRequest();
                 xhr.onload = function () {
                     // console.log(xhr.readyState);
@@ -95,13 +93,13 @@
                 xhr.send();
 
             },
-            show:function(){
+            show: function () {
                 this.message = 'Ordered details on the 20th June 2022'
                 // console.log(temp);
                 this.temp = temp;
             },
 
-            Available:function(){
+            Available: function () {
                 var xhr = new XMLHttpRequest();
                 xhr.onload = function () {
                     var avaSql = JSON.parse(this.responseText);
@@ -114,7 +112,7 @@
                 xhr.send();
             },
 
-            avashow:function(){
+            avashow: function () {
                 // console.log(this.ava);
                 // console.log(ava);
                 this.ava = ava;
@@ -122,4 +120,18 @@
         },
     })
 </script>
+
+<script>
+
+    var dataselect = document.getElementById('dataselect');
+    var sectionselect = document.getElementById('sectionselect');
+    var btn = document.getElementById('btn');
+    btn.addEventListener("click",function(){
+        console.log(dataselect.value);
+        console.log(sectionselect.value);
+    })
+
+
+</script>
+
 </html>
