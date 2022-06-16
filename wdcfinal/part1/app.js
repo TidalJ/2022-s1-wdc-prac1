@@ -72,13 +72,14 @@ app.get('/order', function (req, res) {
   let section = req.query.sectionselect;
   // console.log(data);
   // console.log(section);
-  connection.query('SELECT * FROM availableseats', function (error, results, fields) {
+  let searchsql = 
+    connection.query('SELECT * FROM availableseats', function (error, results, fields) {
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
+    // console.log('The solution is: ', deal);
     res.json(deal);
   });
-  // var addsql = 'INSERT INTO '
-  res.send();
+
 });
 
 app.use('/', indexRouter);
