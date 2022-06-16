@@ -29,17 +29,16 @@
             </li>
         </div>
 
-        <button @click="Available">search Available seats</button>
+        <!-- show available seats -->
+        <!-- <button @click="Available">search Available seats</button>
         <button @click="avashow">show all Available seats</button>
         <div>
             <li v-for="(j,k) in ava">
                 The Available seat id is {{ava[k].seatsid}}
-                <!-- <br>
-                The Available seat section is {{ava[k].section}}
-                <br>
-                The Available seat num is {{ava[k].seat}} -->
             </li>
-        </div>
+        </div> -->
+
+<!-- select data and section -->
 
         <input type="date" name="" id="dataselect">
         <select value="section" id="sectionselect">
@@ -47,12 +46,12 @@
             <option value="A">A</option>
             <option value="B">B</option>
         </select>
-        <input type="submit" value="submit" id="btn">
+        <input type="submit" value="submit select" id="btn">
         <input type="submit" value="show" id="btn" @click="showfilter">
 
         <div>
             <li v-for="(p,q) in filter">
-                {{filter[q]}}
+                The Available seat id is <span>{{filter[q].seatsid}}</span>
             </li>
         </div>
 

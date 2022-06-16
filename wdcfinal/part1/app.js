@@ -77,11 +77,11 @@ app.get('/filter', function (req, res) {
   if(datase == '' && sectionse == ''){
     searchsql = 'SELECT * FROM seats WHERE ordertime IS NULL';
   }else if(datase == '' && sectionse != ''){
-    searchsql = 'SELECT * FROM seats WHERE ordertime IS NULL AND section = "'+datase+'"';
+    searchsql = 'SELECT * FROM seats WHERE ordertime IS NULL AND section = "'+sectionse+'"';
   }else if(datase != '' && sectionse == ''){
     searchsql = 'SELECT * FROM seats WHERE ordertime <= "'+datase+'" OR ordertime IS NULL';
   }else{
-    searchsql = 'SELECT * FROM seats WHERE (ordertime <= "'+datase+'" OR ordertime IS NULL) AND section = "'+datase+'"';
+    searchsql = 'SELECT * FROM seats WHERE (ordertime <= "'+datase+'" OR ordertime IS NULL) AND section = "'+sectionse+'"';
   }
   console.log(searchsql);
     connection.query(searchsql, function (error, results, fields) {
