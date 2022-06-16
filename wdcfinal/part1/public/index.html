@@ -13,7 +13,9 @@
         <button @click="show">show orders</button>
         <input type="text" v-model="message">
         <div>{{message}}
-            <li v-for="(i,index) in temp"> {{temp}} </li>
+            <li v-for="(i,index) in temp">
+                {{temp[index].orderid}} {{temp[index].section}} {{temp[index].seat}} {{temp[index].ordertime}} {{temp[index].userid}} {{temp[index].username}}
+            </li>
         </div>
     </div>
 </body>
@@ -23,7 +25,8 @@
         data: {
             message: 'Hello Vue!',
             orders:[],
-            temp:{}
+            temp:[],
+
         },
         methods: {
             search:function(){
@@ -31,20 +34,26 @@
                 xhr.onload = function () {
                     // console.log(xhr.readyState);
                     var ord = JSON.parse(this.responseText);
-                    console.log(ord);
+                    // console.log(ord);
                     var len = ord.length;
                     // console.log(len);
                     this.orders = ord;
-                    this.temp = ord[0];
-                    console.log(this.temp);
+                    temp = ord;
                     // console.log(this.orders);
+                    // console.log(orders);
+                    // console.log(temp);
+                    // console.log(this.temp[0].username);
+                    // console.log(typeof(this.temp));
+                    // console.log(typeof(this.orders));
+                    // message = this.temp;
+                    // console.log(this.message);
                 }
                 xhr.open('get', '/order');
                 xhr.send();
             },
             show:function(){
-                // alert(this.orders)
-                this.message = this.temp;
+                console.log(temp);
+                this.temp = temp;
             }
         },
     })
