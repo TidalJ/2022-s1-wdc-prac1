@@ -16,8 +16,26 @@
         <div>
             {{message}}
             <li v-for="(i,index) in temp">
-                {{temp[index].orderid}} {{temp[index].section}} {{temp[index].seat}} {{temp[index].ordertime}}
-                <!-- {{temp[index].userid}} {{temp[index].username}} -->
+                <!-- {{temp[index].orderid}}  -->
+                the order section is <span>{{temp[index].section}} </span> 
+                seat is <span>{{temp[index].seat}} </span> 
+                <!-- <br> -->
+                <!-- ordertime is <span>{{temp[index].ordertime}}</span>  -->
+                <!-- {{temp[index].userid}}  -->
+                <!-- <br> -->
+                <!-- order username is <span>{{temp[index].username}}</span>  -->
+            </li>
+        </div>
+
+        <button @click="Available">search Available seats</button>
+        <button @click="avashow">show Available seats</button>
+        <div>
+            <li v-for="(j,k) in ava">
+                The Available seat id is {{ava[k].seatsid}}
+                <!-- <br>
+                The Available seat section is {{ava[k].section}}
+                <br>
+                The Available seat num is {{ava[k].seat}} -->
             </li>
         </div>
     </div>
@@ -26,9 +44,11 @@
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'Hello Vue!',
+            message: 'Welcome come!!!',
             orders:[],
             temp:[],
+            ava:[],
+            avatemp:[],
 
         },
         methods: {
@@ -56,8 +76,27 @@
             },
             show:function(){
                 this.message = 'Ordered details on the 20th June 2022'
-                console.log(temp);
+                // console.log(temp);
                 this.temp = temp;
+            },
+
+            Available:function(){
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    var avaSql = JSON.parse(this.responseText);
+                    ava = avaSql;
+                    // console.log(ava);
+                    // this.ava = ava;
+                    // console.log(this.ava);
+                }
+                xhr.open('get', '/ava');
+                xhr.send();
+            },
+
+            avashow:function(){
+                // console.log(this.ava);
+                // console.log(ava);
+                this.ava = ava;
             }
         },
     })

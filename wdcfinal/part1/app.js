@@ -56,6 +56,15 @@ app.get('/order',function(req,res){
   // res.end();
 })
 
+app.get('/ava',function(req,res){
+  connection.query('SELECT * FROM availableseats', function (error, results, fields) {
+    if (error) throw error;
+    var deal = JSON.parse(JSON.stringify(results));
+    console.log('The solution is: ', deal);
+    res.json(deal);
+  });
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
