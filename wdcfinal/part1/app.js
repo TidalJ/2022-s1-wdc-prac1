@@ -42,7 +42,7 @@ app.use(express.static(__dirname + "/public", { index: "index.html" }));
 // });
 
 app.get('/searchorder', function (req, res) {
-  connection.query('SELECT * FROM orders WHERE ordertime <= "2022-06-20"', function (error, results, fields) {
+  connection.query('SELECT * FROM seats WHERE ordertime <= "2022-06-20"', function (error, results, fields) {
     // connection.release();
     if (error) throw error;
     var deal = JSON.parse(JSON.stringify(results));
