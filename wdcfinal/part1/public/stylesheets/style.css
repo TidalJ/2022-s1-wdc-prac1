@@ -25,7 +25,7 @@ body {
   border: 1px blue solid;
   text-align: center;
   width: 500px;
-  height: 600px;
+  height: 580px;
   border-radius: 15px;
 }
 
@@ -95,7 +95,7 @@ body {
 .listdiv{
   transition: 0.5s;
   border-radius: 15px;
-  height: 380px;
+  max-height: 360px;
   width: 100%;
   overflow-y: auto;
   border: 1px yellow solid;
@@ -103,7 +103,7 @@ body {
 }
 
 .listdiv:hover{
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(245, 245, 245);
 }
 
 .list{
@@ -117,4 +117,28 @@ body {
 
 .list:hover{
   background-color: rgb(233, 234, 235);
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(174, 170, 170);
+  border-radius:10px;
+}
+
+.listdiv::-webkit-scrollbar-thumb:hover{
+  background: #999;
+}
+.listdiv::-webkit-scrollbar-track{
+  background: rgb(224, 223, 223);
+  border-radius:2px;
+}
+
+::-webkit-scrollbar-corner{
+  background: #204758;
+}
+-webkit-scrollbar-corner {
+  display: block;  
 }
