@@ -45,14 +45,14 @@
     <!-- this can show the filter outcome -->
     <!-- select data and section -->
 
-    <input type="date" name="" id="dataselect">
-    <select value="section" id="sectionselect">
+    <input type="date" name="" id="dataselect" class="filterinput">
+    <select value="section" id="sectionselect" class="filterinput">
         <option value=" ">section</option>
         <option value="A">A</option>
         <option value="B">B</option>
     </select>
 
-    
+    <br>
     <input type="submit" value="Filter date or section" id="btn">
     <br>
     <input type="submit" value="show" id="btnshow" @click="showfilter">
