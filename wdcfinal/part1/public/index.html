@@ -7,27 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>reservation system</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 
 <body>
     <div id="app">
-        <button @click="search">search orders</button>
-        <button @click="show">show orders</button>
-        <!-- <input type="text"> -->
-        <!-- 1.5 -->
-        <div>
+
+        <div id="container">
+    <!-- 1.5 -->
+    <!-- this two button can show the 1.5 output -->
+    <!-- ************************************** -->
+        <!-- <button @click="search">search orders</button>
+        <button @click="show">show orders</button> -->
+    <!-- *************************************** -->
+
+
+        <!-- ********************************************** -->
+        <!-- <div>
             {{message}}
             <li v-for="(i,index) in temp">
-                <!-- {{temp[index].orderid}}  -->
                 the order section is <span>{{temp[index].section}} </span>
                 seat is <span>{{temp[index].seat}} </span>
-                <!-- <br> -->
-                <!-- ordertime is <span>{{temp[index].ordertime}}</span>  -->
-                <!-- {{temp[index].userid}}  -->
-                <!-- <br> -->
-                <!-- order username is <span>{{temp[index].username}}</span>  -->
             </li>
-        </div>
+        </div> -->
 
         <!-- show available seats -->
         <!-- <button @click="Available">search Available seats</button>
@@ -37,26 +39,34 @@
                 The Available seat id is {{ava[k].seatsid}}
             </li>
         </div> -->
+        <!-- **************************************************** -->
 
-<!-- select data and section -->
+    <!-- 1.6 -->
+    <!-- this can show the filter outcome -->
+    <!-- select data and section -->
 
-        <input type="date" name="" id="dataselect">
-        <select value="section" id="sectionselect">
-            <option value=" ">section</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-        </select>
-        <input type="submit" value="Filter date or section" id="btn">
-        <input type="submit" value="show" id="btn" @click="showfilter">
+    <input type="date" name="" id="dataselect">
+    <select value="section" id="sectionselect">
+        <option value=" ">section</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+    </select>
 
-        <div>
-            <li v-for="(p,q) in filter">
-                <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
-                The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
-                The Available seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
-                <input type="submit" value="orderseats" id="ordbtn">
-            </li>
+    
+    <input type="submit" value="Filter date or section" id="btn">
+    <br>
+    <input type="submit" value="show" id="btnshow" @click="showfilter">
+
+    <div>
+        <li v-for="(p,q) in filter" class="list">
+            <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
+            The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
+            The Available seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
+            <input type="submit" value="orderseats" id="ordbtn">
+        </li>
+    </div>
         </div>
+
 
 
     </div>
