@@ -57,7 +57,7 @@
     <br>
     <input type="submit" value="show" id="btnshow" @click="showfilter">
 
-    <div>
+    <div class="listdiv">
         <li v-for="(p,q) in filter" class="list">
             <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
             The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
