@@ -43,7 +43,7 @@
         </div> -->
         <!-- **************************************************** -->
 
-        
+
     <!-- 1.6 -->
     <!-- this can show the filter outcome -->
     <!-- select data and section -->
@@ -56,9 +56,9 @@
     </select>
 
     <br>
-    <input type="submit" value="Filter date or section" id="btn">
+    <input type="submit" value="Filter date or section" id="btn" @click="changeisshow">
     <br>
-    <input type="submit" value="show" id="btnshow" @click="showfilter">
+    <input type="submit" value="show" id="btnshow" @click="showfilter" v-show="ishow">
 
     <div class="listdiv">
         <li v-for="(p,q) in filter" class="list">
@@ -89,6 +89,7 @@
             ifava: false,
             filter:[],
             fil:[],
+            ishow: false,
 
         },
         methods: {
@@ -142,13 +143,16 @@
                 this.ava = ava;
             },
             showfilter:function(){
-
+                this.ishow = !this.ishow
                 this.filter = filter;
                 this.fil = fil;
                 // console.log(filter);
                 // console.log(fil);
                 // console.log(this.filter);                
             },
+            changeisshow:function(){
+                this.ishow = !this.ishow
+            }
         },
     })
 </script>
