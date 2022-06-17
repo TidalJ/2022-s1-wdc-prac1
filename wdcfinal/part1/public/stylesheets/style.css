@@ -8,8 +8,11 @@ body {
   font-size: 50px;
 }
 
+
+
+
 #app{
-  border: 1px red solid;
+  /* border: 1px red solid; */
   justify-content: center;
   align-content: center;
   margin: 0 auto;
@@ -17,6 +20,7 @@ body {
   height: 100%;
   vertical-align: middle;
   border-radius: 15px;
+
 }
 
 
@@ -25,10 +29,11 @@ body {
   justify-content: center;
   align-content: center;
   margin: 0 auto;
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   text-align: center;
   width: 500px;
   height: 580px;
+  /* float: right; */
   border-radius: 15px;
 }
 
@@ -101,10 +106,10 @@ body {
 .listdiv{
   transition: 0.5s;
   border-radius: 15px;
-  max-height: 360px;
+  max-height: 330px;
   width: 100%;
   overflow-y: auto;
-  border: 1px yellow solid;
+  /* border: 1px yellow solid; */
 
 }
 
@@ -128,8 +133,11 @@ body {
 
 ::-webkit-scrollbar{
   width:10px;
+  /* color: transparent; */
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 ::-webkit-scrollbar-thumb{
   background: rgb(174, 170, 170);
   border-radius:10px;
