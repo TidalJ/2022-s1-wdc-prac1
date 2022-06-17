@@ -61,8 +61,8 @@
         <li v-for="(p,q) in filter" class="list">
             <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
             The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
-            The Available seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
-            <input type="submit" value="orderseats" id="ordbtn">
+            seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
+            <button type="submit" value="order" id="ordbtn" class="icon-btn add-btn"><div></div  class="add-icon"><div class="btn-txt">order</div></button>
         </li>
     </div>
         </div>

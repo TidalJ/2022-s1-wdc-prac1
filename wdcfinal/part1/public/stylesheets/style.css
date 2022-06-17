@@ -113,6 +113,7 @@ body {
   padding: 15px;
   font-size: 15px;
   border-radius: 15px;
+  text-align: left;
 }
 
 .list:hover{
@@ -142,3 +143,41 @@ body {
 -webkit-scrollbar-corner {
   display: block;  
 }
+
+
+#ordsection{
+  margin-right: 10px;
+}
+
+/* #ordbtn{
+  float: right;
+} */
+
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #c2bebe;
+  background: rgb(239, 237, 237);
+  border-radius: 25px;
+  overflow: hidden;
+  margin-left: 70px;
+  position: relative;
+  transition: width 0.3s ease-in-out;
+  font-weight: 500;
+  font-family: inherit;
+
+}
+
+.add-btn:hover {
+  width: 100px;
+}
+
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+
