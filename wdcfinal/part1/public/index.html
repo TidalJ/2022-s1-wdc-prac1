@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>reservation system</title>
     <link rel="stylesheet" href="./stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Merriweather+Sans:ital,wght@1,300&family=Poiret+One&family=Vazirmatn:wght@200&display=swap');
+    </style>
 </head>
 
 <body>
@@ -60,8 +63,8 @@
     <div class="listdiv">
         <li v-for="(p,q) in filter" class="list">
             <!-- The Available seat id is <button type="submit"> {{filter[q].seatsid}}</button> -->
-            The Available section is <button type="submit" id="ordsection"> {{filter[q].section}}</button>
-            seat is <button type="submit" id="ordseat"> {{filter[q].seat}}</button>
+            The Available section is <span type="submit" id="ordsection" class="seatoutput"> {{filter[q].section}}</span>
+            seat is <span type="submit" id="ordseat" class="seatoutput"> {{filter[q].seat}}</span>
             <button type="submit" value="order" id="ordbtn" class="icon-btn add-btn"><div></div  class="add-icon"><div class="btn-txt">order</div></button>
         </li>
     </div>
