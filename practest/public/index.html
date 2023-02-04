@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="search" id="searchbar">
+        <button type="submit" id="btn">commit</button>
+        {{shoesList}}
+
+        <button type="submit" id="order" @click="showorder">order</button>
+        <input type="text" v-model="message" @click="getm">
+        <h2> {{message}}</h2>
+        <input type="button" value="change" @click="setm">
+        <h1>
+            {{ordernum}} {{shoesnum}} {{username}} {{email}} 
+        </h1>
+    </div>
+
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            temp: '',
+            shoesList: [
+
+            ],
+            ordernum:'',
+            shoesnum:'',
+            username:'',
+            email:''
+        },
+        methods: {
+            showorder:function() {
+                var xhr = new XMLHttpRequest();
+                var viewtime = document.getElementById('viewtime');
+
+                xhr.onload = function () {
+                    // console.log(xhr.readyState);
+                    var ord = JSON.parse(this.responseText);
+                    console.log(ord);
+                    console.log(typeof(this.responseText) ); 
+                    console.log(this.responseText); 
+                    this.message = ord[0].email;
+                    console.log(ord[0].email); 
+                    console.log(this.message); 
+                    email = ord[0].email;
+                    ordernum = ord[0].ordernumber;
+                    shoesnum = ord[0].shoesnumber;
+                    username = ord[0].username;
+
+                    // this.shoesList = ord[0];
+                    // this.shoesList = this.responseText[0];
+                    // this.shoesList = data;
+                }
+                xhr.open('get', '/order');
+                xhr.send();
+            },
+
+            getm:function(){
+                alert(this.message);
+            },
+
+            setm:function(){
+                this.message = email;
+                this.ordernum = ordernum;
+                this.shoesnum = shoesnum;
+                this.username = username;
+                this.email = email;
+            }
+        },
+    })
+
+
+
+</script>
+
+</html>
